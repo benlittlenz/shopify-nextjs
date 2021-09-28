@@ -19,3 +19,20 @@ export default function Home() {
       </div>
   )
 }
+
+
+// {
+//   collectionByHandle(handle: "frontpage") {
+//     id
+//     title
+//     products(first: 25) {
+//       edges {
+//         node {
+//           id
+//           title
+//           handle
+//         }
+//       }
+//     }
+//   }
+// }
