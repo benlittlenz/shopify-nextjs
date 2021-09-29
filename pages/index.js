@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import { getProducts } from "../lib/shopify";
+// import { ProductList } from "../components/Products";
+import { ProductList } from "../components/Products";
 
 export default function Home({products}) {
   console.log("PRODUCTS", products)
@@ -15,7 +17,7 @@ export default function Home({products}) {
       </Head>
 
       <main>
-        <div></div>
+        <ProductList products={products} />
       </main>
     </div>
   );
