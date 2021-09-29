@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
+import { getProducts } from "../lib/shopify";
+
+export default function Home({products}) {
+  console.log("PRODUCTS", products)
   return (
     <div className={styles.container}>
       <Head>
@@ -12,27 +15,16 @@ export default function Home() {
       </Head>
 
       <main>
-      <div>
-
-      </div>
+        <div></div>
       </main>
-      </div>
-  )
+    </div>
+  );
 }
 
+export async function getStaticProps() {
+  const products = await getProducts();
 
-// {
-//   collectionByHandle(handle: "frontpage") {
-//     id
-//     title
-//     products(first: 25) {
-//       edges {
-//         node {
-//           id
-//           title
-//           handle
-//         }
-//       }
-//     }
-//   }
-// }
+  return {
+    props: { products },
+  };
+}
